@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = '/api/users'
+const API_URL = 'https://mern-task-recorder-api.onrender.com/api/users'
 
 const register = async (userData) => {
     const res = await axios.post(API_URL, userData)
