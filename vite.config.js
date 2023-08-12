@@ -5,7 +5,12 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      '/api':"https://mern-task-recorder-api.onrender.com"
+      '/api':{
+        target:"https://mern-task-recorder-api.onrender.com",
+        changeOrigin: true,
+           secure: false,      
+           ws: true,
+      }
     }
   },
   plugins: [react()],
