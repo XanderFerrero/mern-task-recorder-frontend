@@ -40,7 +40,7 @@ export default function Dashboard() {
     <>
       <div className="container mt-3">
         <div className="row">
-          <div className="col">
+          <div className="col-md">
             <h1>Current User: {user && user.name}</h1>
             <div className="mt-4" id="task-container">
               <h2 className="mb-3">Recent Tasks</h2>
@@ -79,7 +79,7 @@ export default function Dashboard() {
               )}
             </div>
           </div>
-          <div className="col">
+          <div className="col-md mt-3">
             <TaskForm />
           </div>
         </div>
