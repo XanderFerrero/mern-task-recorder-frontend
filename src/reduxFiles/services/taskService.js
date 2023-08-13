@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = "https://mern-task-recorder-api.onrender.com/api/tasks"
+const API_URL = "/api/tasks"
 
 const get = async(token) => {
     const res = await axios.get(API_URL,{

@@ -11,6 +11,16 @@ const initialState = {
     mainTasks:[]
 }
 
+const sort = (a,b) => {
+    if(a.createdAt > b.createdAt){
+        return -1
+    }else if(a.createdAt < b.createdAt){
+        return 1
+    }
+    
+    return 0;
+}
+
 export const get = createAsyncThunk('task/get', async(_, thunkAPI) => {
     try{
         const token = thunkAPI.getState().auth.user.token;
@@ -72,6 +82,7 @@ const taskSlice = createSlice({
                 state.loading = false;
                 state.success = true;
                 state.mainTasks = action.payload
+                state.mainTasks.sort(sort)
             })
             .addCase(get.rejected, (state, action) => {
                 state.loading = false;
@@ -86,6 +97,7 @@ const taskSlice = createSlice({
                 state.success = true;
                 state.tasks = []
                 state.mainTasks = [...state.mainTasks, ...action.payload]
+                state.mainTasks.sort(sort)
             })
             .addCase(post.rejected, (state, action) => {
                 state.loading = false;

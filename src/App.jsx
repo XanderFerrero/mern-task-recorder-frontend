@@ -7,7 +7,11 @@ import Register from "./pages/Register"
 import "bootstrap/dist/css/bootstrap.min.css"
 import {ToastContainer} from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
+import axios from "axios";
 
+axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL
+
+console.log(import.meta.env.VITE_SERVER_URL);
 
 function App() {
 
